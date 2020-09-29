@@ -277,12 +277,10 @@ Swap
   * *Markdown + pandoc*
   * *Latex*
 
-# Контакты
+<!-- DELETE THIS LINE FOR AN ACTUAL PRESENTATION
+# Telegram chat
 
-## Telegram chat
+<!-- не забудь сгенерировать QR (инструкция в README) -->
+![](images/tme.png)
 
-Преподаватель: ФИО
-
-Группа в tg:  t.me/
-
-QR
+DELETE THIS LINE FOR AN ACTUAL PRESENTATION -->
