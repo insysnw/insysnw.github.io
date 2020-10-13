@@ -7,6 +7,8 @@
 
 * [О TLS на русском](https://tls.dxdt.ru/tls.html)
 
+* [Low-level Academy](https://lowlvl.org/) - Сети и Rust 🦀
+
 ## Книги
 
 # Послушать
