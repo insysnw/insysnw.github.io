@@ -17,6 +17,8 @@ template = "page.html"
 
 * [Low-level Academy](https://lowlvl.org/) - Сети и Rust 🦀
 
+* [Краткая история HTTP от версии 0.9 до 3](https://scorpil.com/post/the-long-road-to-http3/)
+
 ## Книги
 
 # Послушать
