@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{{ page.content | safe }}
+
+<hr>
+<h1 class="title">
+ tera_context
+</h1>
+<div>
+{{ __tera_context }}
+hek
+</div>
+{% endblock content %}
