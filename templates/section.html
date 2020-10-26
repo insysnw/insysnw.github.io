@@ -4,7 +4,9 @@
 <h1 class="title">
  {{ section.title }}
 </h1>
+<div class="content">
 {{ section.content | safe }}
+</div>
 
 <ul>
   {% for page in section.pages %}
