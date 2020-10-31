@@ -19,6 +19,8 @@ template = "page.html"
 
 * [Краткая история HTTP от версии 0.9 до 3](https://scorpil.com/post/the-long-road-to-http3/)
 
+* [Сравнение TCP congestion алгоритмов](https://toonk.io/tcp-bbr-exploring-tcp-congestion-control/index.html)
+
 ## Книги
 
 # Послушать
