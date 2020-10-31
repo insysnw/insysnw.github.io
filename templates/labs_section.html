@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="title">{{ section.title }}</h1>
+<div class="content">
+  {{ section.content | safe }}
+</div>
+<h2 class="is-size-3">Домашние задания</h2>
+<p>Выполняются самостоятельно.</p>
+<ul>
+  {% for page in section.pages %}
+    {% for taxonomie, key in page.taxonomies %}
+	  {% if taxonomie == "categories" and key is containing("homework") %}
+        <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</ul>
+<hr>
+<h2 class="is-size-3">Лабораторные</h2>
+<p>Выполнятся всей группой в подготовленных преподавателем условиях.</p>
+<ul>
+  {% for page in section.pages %}
+    {% for taxonomie, key in page.taxonomies %}
+	  {% if taxonomie == "categories" and key is containing("lab") %}
+        <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</ul>
+<hr>
+<h2 class="is-size-3">Биты</h2>
+<p>Полезные инструкции. Обычно требуются для подготовки к лабораторным.</p>
+<ul>
+  {% for page in section.pages %}
+    {% for taxonomie, key in page.taxonomies %}
+	  {% if taxonomie == "categories" and key is containing("bit") %}
+        <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</ul>
+{% endblock content %}
