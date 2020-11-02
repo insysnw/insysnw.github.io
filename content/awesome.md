@@ -29,6 +29,8 @@ template = "page.html"
 
 # Посмотреть
 
+* [QUIC & HTTP/3 Webinar](https://www.youtube.com/watch?v=7EIUvzw4DM4)
+
 # Интерактив
 
 * [PANOPTICLICK](https://panopticlick.eff.org/) - проверка уникальности отпечатка вашего браузера
