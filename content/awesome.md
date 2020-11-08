@@ -29,7 +29,9 @@ template = "page.html"
 
 # Посмотреть
 
-* [QUIC & HTTP/3 Webinar](https://www.youtube.com/watch?v=7EIUvzw4DM4)
+* [Bryan Cantrill on kqueue & friends](https://youtu.be/l6XQUciI-Sc?t=3311)
+
+* ~~[QUIC & HTTP/3 Webinar](https://www.youtube.com/watch?v=7EIUvzw4DM4)~~
 
 # Интерактив
 
