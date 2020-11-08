@@ -13,6 +13,8 @@ template = "page.html"
 
 ## В интернетах
 
+* [Beej's Guide to Network Programming](https://beej.us/guide/bgnet/html/) - one love!
+
 * [О TLS на русском](https://tls.dxdt.ru/tls.html)
 
 * [Low-level Academy](https://lowlvl.org/) - Сети и Rust 🦀
@@ -26,6 +28,8 @@ template = "page.html"
 # Послушать
 
 ## Подкасты
+
+* [linkmeup про wifi](https://linkmeup.ru/blog/554.html)
 
 # Посмотреть
 
