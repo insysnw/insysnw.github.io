@@ -35,6 +35,8 @@ template = "page.html"
 
 * [Bryan Cantrill on kqueue & friends](https://youtu.be/l6XQUciI-Sc?t=3311)
 
+* [TLS by Dr. Mike Pound, Computerphile](https://youtu.be/0TLDTodL7Lc)
+
 * ~~[QUIC & HTTP/3 Webinar](https://www.youtube.com/watch?v=7EIUvzw4DM4)~~
 
 # Интерактив
