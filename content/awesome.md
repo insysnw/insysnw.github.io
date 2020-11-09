@@ -23,6 +23,8 @@ template = "page.html"
 
 * [Сравнение TCP congestion алгоритмов](https://toonk.io/tcp-bbr-exploring-tcp-congestion-control/index.html)
 
+* [IPv4 Address Blocks Reserved for Documentation](https://tools.ietf.org/html/rfc5737)
+
 ## Книги
 
 # Послушать
@@ -48,3 +50,5 @@ template = "page.html"
 Тут находятся полезные материалы, но их применимость к данному курсу ещё не определена
 
 * [Linkmeup - Сети для самых маленьких](https://linkmeup.ru/blog/11.html)
+
+* [mtr](https://www.bitwizard.nl/mtr/) - traceroute с информативной визуализацией
