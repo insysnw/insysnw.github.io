@@ -25,6 +25,8 @@ template = "page.html"
 
 * [IPv4 Address Blocks Reserved for Documentation](https://tools.ietf.org/html/rfc5737)
 
+* [Web Performance 101](https://3perf.com/talks/web-perf-101)
+
 ## Книги
 
 # Послушать
