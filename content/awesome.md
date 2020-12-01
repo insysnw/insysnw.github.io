@@ -27,6 +27,8 @@ template = "page.html"
 
 * [Web Performance 101](https://3perf.com/talks/web-perf-101)
 
+* [Asynchronous Programming Under Linux](https://unixism.net/loti/async_intro.html) - введение в асинхронщину с подводкой к `io_uring`
+
 ## Книги
 
 # Послушать
