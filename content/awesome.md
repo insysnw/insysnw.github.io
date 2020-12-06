@@ -29,6 +29,8 @@ template = "page.html"
 
 * [Asynchronous Programming Under Linux](https://unixism.net/loti/async_intro.html) - введение в асинхронщину с подводкой к `io_uring`
 
+* [Head-of-Line Blocking](https://calendar.perfplanet.com/2020/head-of-line-blocking-in-quic-and-http-3-the-details/)
+
 ## Книги
 
 # Послушать
