@@ -9,8 +9,8 @@
 <ul>
   {% for page in section.pages %}
     {% for taxonomie, key in page.taxonomies %}
-	  {% if taxonomie == "categories" and key is containing("homework") %}
-        <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+	  {% if taxonomie == "categories" and key is containing("Домашнее задание") %}
+        <li><a href="{{ page.permalink | safe }}">#{{ page.taxonomies.order | first }} {{ page.title }}</a></li>
       {% endif %}
     {% endfor %}
   {% endfor %}
@@ -21,7 +21,7 @@
 <ul>
   {% for page in section.pages %}
     {% for taxonomie, key in page.taxonomies %}
-	  {% if taxonomie == "categories" and key is containing("lab") %}
+	  {% if taxonomie == "categories" and key is containing("Лабораторная") %}
         <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
       {% endif %}
     {% endfor %}
@@ -33,7 +33,7 @@
 <ul>
   {% for page in section.pages %}
     {% for taxonomie, key in page.taxonomies %}
-	  {% if taxonomie == "categories" and key is containing("bit") %}
+	  {% if taxonomie == "categories" and key is containing("Бит") %}
         <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
       {% endif %}
     {% endfor %}

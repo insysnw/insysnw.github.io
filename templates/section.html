@@ -8,9 +8,16 @@
 {{ section.content | safe }}
 </div>
 
-<ul>
+<ul class="content">
   {% for page in section.pages %}
-  <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+  <li>
+    <a href="{{ page.permalink | safe }}">
+      {{ page.title }}
+    </a>
+    <p>
+      {{ page.description }}
+    </p>
+  </li>
   {% endfor %}
 </ul>
 {% endblock content %}
