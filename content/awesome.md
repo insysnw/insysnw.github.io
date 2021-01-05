@@ -47,7 +47,13 @@ template = "page.html"
 
 * ~~[QUIC & HTTP/3 Webinar](https://www.youtube.com/watch?v=7EIUvzw4DM4)~~
 
-# Интерактив
+# Запустить
+
+## В терминале
+
+* [mtr](https://www.bitwizard.nl/mtr/) - traceroute с информативной визуализацией
+
+## Web
 
 * [PANOPTICLICK](https://panopticlick.eff.org/) - проверка уникальности отпечатка вашего браузера
 
@@ -57,4 +63,3 @@ template = "page.html"
 
 * [Linkmeup - Сети для самых маленьких](https://linkmeup.ru/blog/11.html)
 
-* [mtr](https://www.bitwizard.nl/mtr/) - traceroute с информативной визуализацией
