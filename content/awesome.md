@@ -57,6 +57,8 @@ template = "page.html"
 
 * [PANOPTICLICK](https://panopticlick.eff.org/) - проверка уникальности отпечатка вашего браузера
 
+* [pagespeed by Google](https://developers.google.com/speed/pagespeed/insights/) - проверка скорости отображения вэб страницы
+
 # Предложка
 
 Тут находятся полезные материалы, но их применимость к данному курсу ещё не определена
