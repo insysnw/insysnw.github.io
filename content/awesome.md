@@ -31,6 +31,8 @@ template = "page.html"
 
 * [Head-of-Line Blocking](https://calendar.perfplanet.com/2020/head-of-line-blocking-in-quic-and-http-3-the-details/)
 
+* [The Big little Guide to Message Queues](https://sudhir.io/the-big-little-guide-to-message-queues/) - знакомство с очередями сообщений (фкусная кафка и аналоги)
+
 ## Книги
 
 # Послушать
