@@ -4,7 +4,7 @@
 <div class="content">
   {{ section.content | safe }}
 </div>
-<h2 class="is-size-3">Домашние задания</h2>
+<h2 class="is-size-3" id="homework">Домашние задания</h2>
 <p>Выполняются самостоятельно.</p>
 <ul>
   {% for page in section.pages %}
@@ -16,7 +16,7 @@
   {% endfor %}
 </ul>
 <hr>
-<h2 class="is-size-3">Лабораторные</h2>
+<h2 class="is-size-3" id="labs">Лабораторные</h2>
 <p>Выполнятся всей группой в подготовленных преподавателем условиях.</p>
 <ul>
   {% for page in section.pages %}
@@ -28,7 +28,7 @@
   {% endfor %}
 </ul>
 <hr>
-<h2 class="is-size-3">Биты</h2>
+<h2 class="is-size-3" id="bits">Биты</h2>
 <p>Полезные инструкции. Обычно требуются для подготовки к лабораторным.</p>
 <ul>
   {% for page in section.pages %}
