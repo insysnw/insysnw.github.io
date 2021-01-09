@@ -9,8 +9,8 @@ template = "page.html"
 
 Концепция и название взяты у [awesome списков](https://github.com/topics/awesome).
 
-# Почитать
-
+# {{ mdi(icon="book-open-outline") }} Почитать
+ 
 ## В интернетах
 
 * [Beej's Guide to Network Programming](https://beej.us/guide/bgnet/html/) - one love!
@@ -35,13 +35,13 @@ template = "page.html"
 
 ## Книги
 
-# Послушать
+# {{ mdi(icon="headphones") }} Послушать
 
 ## Подкасты
 
 * [linkmeup про wifi](https://linkmeup.ru/blog/554.html)
 
-# Посмотреть
+# {{ mdi(icon="vhs") }} Посмотреть
 
 * [Bryan Cantrill on kqueue & friends](https://youtu.be/l6XQUciI-Sc?t=3311)
 
@@ -49,7 +49,7 @@ template = "page.html"
 
 * ~~[QUIC & HTTP/3 Webinar](https://www.youtube.com/watch?v=7EIUvzw4DM4)~~
 
-# Запустить
+# {{ mdi(icon="console-line") }} Запустить
 
 ## В терминале
 
