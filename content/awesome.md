@@ -33,6 +33,8 @@ template = "page.html"
 
 * [The Big little Guide to Message Queues](https://sudhir.io/the-big-little-guide-to-message-queues/) - знакомство с очередями сообщений (фкусная кафка и аналоги)
 
+* [BGP by NSRC](https://learn.nsrc.org/bgp) - курс про протокол BGP - основу маршрутизации
+
 ## Книги
 
 # {{ mdi(icon="headphones") }} Послушать
