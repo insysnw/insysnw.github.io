@@ -1,6 +1,7 @@
 +++
 title = "Реальный UDP протокол"
-template = "page_tax.html"
+weight = 2
+aliases = ["/labs/02-udp-real-protocol/"]
 [taxonomies]
 categories = ["Домашнее задание"]
 order = ["2"]

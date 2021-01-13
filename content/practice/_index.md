@@ -1,6 +1,9 @@
 +++
 title = "Практика"
 template = "labs_section.html"
+page_template = "page_tax.html"
+sort_by = "weight"
+aliases = ["/labs"]
 +++
 
 Все приведённые на данной странице материалы направлены на получение практических навыков.

@@ -1,7 +1,8 @@
 +++
 title = "TCP чат"
 description = "Разрабатываем и реализуем свой протокол для чата"
-template = "page_tax.html"
+weight = 1
+aliases = ["/labs/01-tcp-chat/"]
 [taxonomies]
 categories = ["Домашнее задание"]
 order = ["1"]

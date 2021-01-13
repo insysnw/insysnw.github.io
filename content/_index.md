@@ -39,9 +39,9 @@ page_template = "index.html"
 Но мы стараемся не забывать и про самое важное - опыт!
 Для этого есть:
 
-* [Домашние задания](/labs#homework)
-* [Лабораторные](/labs#labs)
-* [Инструкции](/labs#bits)
+* [Домашние задания](/practice#homework)
+* [Лабораторные](/practice#labs)
+* [Руководства](/practice#guides)
 
 ## Авторы
 

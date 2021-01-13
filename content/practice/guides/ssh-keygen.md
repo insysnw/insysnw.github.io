@@ -1,6 +1,7 @@
 +++
 title = "Создание SSH ключа"
-template = "page_tax.html"
+weight = 1
+aliases = ["labs/900-ssh-keygen/"]
 [taxonomies]
 categories = ["Бит"]
 +++
