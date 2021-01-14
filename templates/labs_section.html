@@ -33,7 +33,7 @@
 <ul>
   {% for page in section.pages %}
     {% for taxonomie, key in page.taxonomies %}
-	  {% if taxonomie == "categories" and key is containing("Бит") %}
+	  {% if taxonomie == "categories" and key is containing("Руководство") %}
         <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
       {% endif %}
     {% endfor %}

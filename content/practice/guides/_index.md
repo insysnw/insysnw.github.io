@@ -1,5 +1,5 @@
 +++
 title = "HomeWork"
-redirect_to = "practice#bits"
+redirect_to = "practice#guides"
 transparent = true
 +++
