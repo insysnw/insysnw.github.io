@@ -69,3 +69,4 @@ template = "page.html"
 
 * [Linkmeup - Сети для самых маленьких](https://linkmeup.ru/blog/11.html)
 
+* [The terminal, the console and the shell - what are they?](http://unixsheikh.com/articles/the-terminal-the-console-and-the-shell-what-are-they.html#tmux-vs-gnu-screen)
