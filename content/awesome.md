@@ -55,6 +55,8 @@ template = "page.html"
 
 ## В терминале
 
+* [gping](https://github.com/orf/gping) - ping c графиками
+
 * [mtr](https://www.bitwizard.nl/mtr/) - traceroute с информативной визуализацией
 
 ## Web
