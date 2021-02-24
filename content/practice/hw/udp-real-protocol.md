@@ -89,6 +89,7 @@ order = ["2"]
 **Популярные имлементации**:
 * [https://www.pool.ntp.org/](https://www.pool.ntp.org/) - пул публичных серверов
 * Клиенты встроены в большинство настольных ОС
+* [chrony](https://chrony.tuxfamily.org/) - открытые сервер и клиент
 
 ## SNMP
 
