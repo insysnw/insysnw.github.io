@@ -23,14 +23,13 @@ $ telnet academy.ejiek.com 80
 Trying 188.242.22.225...
 Connected to academy.ejiek.com.
 Escape character is '^]'.
-GET /about_http/page
-Hello, I'm pre html text.
-
-Isn't it easy to read?
-No mark up nonsense! The question is "How to make a Hypertext out of it"?
-The fact it, I don't know what was the idea in HTTP 0.9 (which seemd to be developed before HTML)
-
-Bye.
+GET /about_http/page.html
+<html><>
+  <p>In the first age</p>
+  <p>In the first 18 tags</p>
+  <p>When the hypertext first lenghtened</p>
+  <p>One stood</p>
+</html>
 Connection closed by foreign host.
 ```
 
