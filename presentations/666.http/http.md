@@ -1,5 +1,5 @@
 ---
-title: Hypertext Transfer Protocol  
+title: Маленький протокол, который смог
 author: Алексюк Артём Олегович, Зорин Арсений Геннадьевич, Петров Владислав Дмитриевич
 type: slide
 slideOptions:
@@ -10,7 +10,7 @@ slideOptions:
 
 . . . 
 
-До этого в курсе были рассмотрены самодостаточные протоколы прикладного уровня
+Самодостаточные протоколы прикладного уровня
 
 # Hypertext Transfer Protocol
 
@@ -18,22 +18,24 @@ slideOptions:
 
 Зачем?
 
-## 0.9 - Тёмные времена
+# HTTP 0.9
+
+Передача и отображение HyperText
 
 ##
 
 ```
-➜ telnet academy.ejiek.com 80
+$ telnet academy.ejiek.com 80
 Trying 188.242.22.225...
 Connected to academy.ejiek.com.
-GET /about_http/page
-Hello, I'm pre html text.
-
-Isn't it easy to read?
-No mark up nonsense! The question is "How to make a Hypertext out of it"?
-The fact it, I don't know what the idea was in HTTP 0.9 (which seemd to be developed before HTML)
-
-Bye.
+Escape character is '^]'.
+GET /about_http/page.html
+<html>
+  <p>In the first age</p>
+  <p>In the first 18 tags</p>
+  <p>When the hypertext first lenghtened</p>
+  <p>One stood</p>
+</html>
 Connection closed by foreign host.
 ```
 
@@ -43,25 +45,25 @@ Connection closed by foreign host.
 
 . . .
 
-`http://cernvm/FIND/?sgml+cms`
+`http://academy.ejiek.com/about_http/index?key+words`
 
 
-# 1.0
+# HTTP 1.0
 
 . . .
 
 Переход от простого отображения к взаимодействию
 
-. . .
+## HTTP 1.0
 
 Так появились типы запросов
-POST GET PUT DELETE (others)
+POST UPDATE PUT DELETE (others)
 
 . . .
 
 обратная связь от сервера
 
-# Status codes
+## Status codes
 
 * 1XX
 * 2XX
@@ -69,7 +71,7 @@ POST GET PUT DELETE (others)
 * 4XX
 * 5XX
 
-# Составные страницы
+## Составные страницы
 
 * В 0.9 на каждый запрос открывались новое соединение
 * Страницы начали содержать не только текст
@@ -94,9 +96,11 @@ POST GET PUT DELETE (others)
 
 `Connection: keep-alive`
 
-# 1.1
+# HTTP 1.1
 
-* Keep-alive стал поведением по умолчанию
+. . .
+
+* Keep-alive — поведение по умолчанию
 
 . . .
 
@@ -104,12 +108,11 @@ POST GET PUT DELETE (others)
 
 ## AJAX
 
-Позволяет обновить часть страницы.
+Asynchronous JavaScript and XML
 
-## Single Page Application
+## SPA
 
-* Сокращает нагрузку на сеть, сервер, клиент
-* Может даже работать offline
+Single Page Application
 
 # HTTP 2
 
@@ -120,14 +123,20 @@ POST GET PUT DELETE (others)
 
 QUIC
 
-##
+## QUIC
 
 * Установление сессий связи и шифрования объединены
 * В этот процесс завезли кэширование
 * В рамках одной сессии существуют несколько потоков
 
-## Недостатки 
+## QUIC == Silver bullet?
 
-UDP является набором пакетов
+# Recap
 
-# Открываем Dev Tools
+. . .
+
+Путь из передачи текста в транспорт
+
+. . .
+
+https://insysnw.github.io/lectures/http/
