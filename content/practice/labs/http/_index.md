@@ -137,7 +137,7 @@ https://insysnw.github.io/index.file?rick+roll
 Для этого перейдём на [https://duckduckgo.com/](https://duckduckgo.com/)
 и наберём `rick roll` и выполним поиск:
 
-![скриншот запроса](http/duckduckgo.png)
+[![скриншот запроса](duckduckgo.png)](https://duckduckgo.com/?q=rick+roll)
 
 Теперь обратим внимание на формат адресной строки после выполнения запроса:
 ```
