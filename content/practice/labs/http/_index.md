@@ -48,48 +48,16 @@ Connection closed by foreign host.
 Всё, кроме последней строчки - ответ, а последняя строчка - сообщение от самого `telnet` о том, что сервер закрыл TCP сессию.
 Это единственное поведение сервера в данной версии протокола.
 
-# Дублирование доменного имени в заголовке запроса
-
-Для проверки откроем [https://academy.ejiek.com/about\_http/page.html](https://academy.ejiek.com/about_http/page.html) в браузере.
-Просто октрыть страницу нам не достаточно, для просмотра заголовка нужно открыть "Инструменты разработчика" (DevTools).
-В Firefox, Chromium-based браузерах один из способов их открыть - клавиша `F12`.
-Там нас интересует вкладка `Network`.
-
-Если вы сначала открыли страницу, а потом DevTools, то с большой вероятностью эта вкладка пуста.
-Это вызвано тем, что её заполнение началось после открытия DevTools, что произошло после загрузки страницы.
-
-Обновим страницу (`Ctrl+R`, `F5` или кнопка обновления).
-Теперь мы можем увидеть запрос к `/about_http/page.html`, однако статус код ответа `304`.
-Для просмотра подробной информации по запросу, следует его открыть. 
-Это говорит о том, что страница браузером уже загружена и обновление загружать не требуется.
-В данном примере нас интересует заголовок `Host`, в котором можно найти доменное имя, использованное клиентом, и почти полностью восстановить строку запроса.
-
-`raw` заголовок запроса:
-
-```
-GET /about_http/page.html HTTP/2
-Host: academy.ejiek.com
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate, br
-Connection: keep-alive
-Cookie: _ym_uid=1606166876113626088; _ym_d=1606166876
-Upgrade-Insecure-Requests: 1
-If-Modified-Since: Tue, 02 Mar 2021 08:45:26 GMT
-If-None-Match: "603dfb26-87"
-Cache-Control: max-age=0
-TE: Trailers
-```
-
-Упущенным остаётся только протокол (`http` или `https`).
-
 # Способы передачи информации
 
+Для просмотра содержимого запросов и ответов в этой лаборатоной мы воспользуемся неотемлемой частью современных браузеров - "Инструментами разработчика" (DevTools).
+В Firefox, Chromium-based браузерах один из способов их открыть - клавиша `F12`.
+Там нас интересует вкладка `Network`.
 
 ## Строка запроса
 Исторически первый и самый часто используемый способ передачи данных - строка запроса.
 Та, что в заголовке следует сразу за методом.
+Посмотри на
 В ранее расмотреном примере:
 ```
 GET /about_http/page.html HTTP/2
@@ -97,7 +65,6 @@ GET /about_http/page.html HTTP/2
 `/about_http/page.html` та самая строка запроса.
 Вопреки рассмотренному примеру, она может состоять не только из пути до файла.
 Рассмотрим возможные составляющий по порядку.
-
 
 ### Путь (path)
 Изначально эта часть строки запроса соответствовала пути к файлу на сервере.
@@ -115,7 +82,7 @@ $ tree
 Так как сайты уже давно перестали быть набором статичных файлов, а превратились в сложные приложения, путь часто используется для указания желаемой страницы.
 Например, группы, пользователя или проекта - [github.com/insysnw/insysnw.github.io](https://github.com/insysnw/insysnw.github.io).
 Тут `insysnw` является группой, а `insysnw.github.io` - проектом.
-Чаще всего запись о группе хранится в базе данных (БД) системы, а не дирректорией в файловой системе сервера. 
+Чаще всего запись о группе хранится в базе данных (БД) системы, а не дирректорией в файловой системе сервера.
 
 ### Запрос (query)
 
@@ -137,7 +104,11 @@ https://insysnw.github.io/index.file?rick+roll
 Для этого перейдём на [https://duckduckgo.com/](https://duckduckgo.com/)
 и наберём `rick roll` и выполним поиск:
 
-[![скриншот запроса](duckduckgo.png)](https://duckduckgo.com/?q=rick+roll)
+<center>
+
+![скриншот запроса](http/duckduckgo.png)
+
+</center>
 
 Теперь обратим внимание на формат адресной строки после выполнения запроса:
 ```
@@ -210,7 +181,7 @@ https://duckduckgo.com/?q=rick+roll&t=h_&ia=web
     </th>
   </tr>
   <tr>
-    <td>  
+    <td>
 		<pre>
 GET /about_http/page.html?kek HTTP/2
 Host: academy.ejiek.com
@@ -223,7 +194,7 @@ Cookie: _ym_uid=160...
 Upgrade-Insecure-Requests: 1
 Pragma: no-cache
 Cache-Control: no-cache
-		</pre>  
+		</pre>
     </td>
     <td>
 		<pre>
@@ -265,7 +236,7 @@ X-Firefox-Spdy: h2
     </th>
   </tr>
   <tr>
-    <td>  
+    <td>
 		<pre>
 GET /about_http/page.html?kek HTTP/2
 Host: academy.ejiek.com
@@ -279,7 +250,7 @@ Upgrade-Insecure-Requests: 1
 If-Modified-Since: Tue, 02 Mar 2021 08:45:26 GMT
 If-None-Match: "603dfb26-87"
 Cache-Control: max-age=0
-		</pre>  
+		</pre>
     </td>
     <td>
 		<pre>
@@ -305,7 +276,7 @@ X-Firefox-Spdy: h2
 
 **Пример:** [http://academy.ejiek.com/about\_http/page.html](http://academy.ejiek.com/about_http/page.html)
 *Обратите внимание на отсутствие `s` в `http`.*
-* Если в логе видно только 200 или 304, а 301 - нето, необходимо включить `Persist logs`*
+* Если в логе видно только 200 или 304, а 301 - нет, необходимо включить `Persist logs`*
 
 <table>
   <tr>
@@ -317,7 +288,7 @@ X-Firefox-Spdy: h2
     </th>
   </tr>
   <tr>
-    <td>  
+    <td>
 		<pre>
 GET /practice HTTP/2
 Host: insysnw.github.io
@@ -330,7 +301,7 @@ Referer: https://insysnw.github.io/
 Upgrade-Insecure-Requests: 1
 Sec-GPC: 1
 TE: Trailers
-		</pre>  
+		</pre>
     </td>
     <td>
 		<pre>
@@ -379,7 +350,7 @@ X-Firefox-Spdy: h2
     </th>
   </tr>
   <tr>
-    <td>  
+    <td>
 		<pre>
 GET /about_http/missing_page.html HTTP/2
 Host: academy.ejiek.com
@@ -392,7 +363,7 @@ Upgrade-Insecure-Requests: 1
 Sec-GPC: 1
 Cache-Control: max-age=0
 TE: Trailers
-		</pre>  
+		</pre>
     </td>
     <td>
 		<pre>
@@ -410,7 +381,7 @@ X-Firefox-Spdy: h2
 
 # 418
 `I'm a teapot` - отказ сварить кофе, т.к. вызываемое устройство - не кофемашина
-**Пример:** [https://www.google.com/teapot](https://www.google.com/teapot) 
+**Пример:** [https://www.google.com/teapot](https://www.google.com/teapot)
 
 <table>
   <tr>
@@ -422,7 +393,7 @@ X-Firefox-Spdy: h2
     </th>
   </tr>
   <tr>
-    <td>  
+    <td>
 		<pre>
 HTTP/2 418 I'm a teapot
 content-type: text/html; charset=UTF-8
@@ -435,7 +406,7 @@ x-frame-options: SAMEORIGIN
 set-cookie: ...
 alt-svc: h3-29=":443"; ...
 X-Firefox-Spdy: h2
-		</pre>  
+		</pre>
     </td>
     <td>
 		<pre>
@@ -469,7 +440,7 @@ Sec-GPC: 1
     </th>
   </tr>
   <tr>
-    <td>  
+    <td>
 		<pre>
 GET /about_http/bad_gateway HTTP/2
 Host: academy.ejiek.com
@@ -483,7 +454,7 @@ Sec-GPC: 1
 Pragma: no-cache
 Cache-Control: no-cache
 TE: Trailers
-		</pre>  
+		</pre>
     </td>
     <td>
 		<pre>
@@ -501,5 +472,50 @@ X-Firefox-Spdy: h2
 
 # Заголовки
 
+В [лекции по HTTP](/lectures/http) мы уже ознакомились с заголовками и их предназначением.
+Здесь же мы рассмотрим наиболее часто используемые.
+
+## Host
+
+Очень важный для работы современных веб серверов и прокси.
+Обязательный для версий протоколо выше 1.1 включительно.
+
+Проверим его наличие на странице **[https://academy.ejiek.com/about\_http/page.html](https://academy.ejiek.com/about_http/page.html)** в браузере.
+
+`raw` заголовок запроса:
+
+```
+GET /about_http/page.html HTTP/2
+Host: academy.ejiek.com
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Cookie: _ym_uid=1606166876113626088; _ym_d=1606166876
+Upgrade-Insecure-Requests: 1
+If-Modified-Since: Tue, 02 Mar 2021 08:45:26 GMT
+If-None-Match: "603dfb26-87"
+Cache-Control: max-age=0
+TE: Trailers
+```
+
+Упущенным остаётся только протокол (`http` или `https`).
+
 ## User Agent
+
+Сейчас заголовок чаще всего используется для снятия отпечатка устройства.
+Иногда его используют для оперделения браузера, чтобы выдть соответсвующую страницу.
+Так, некоторые сервисы Google настоятельно рекомендуют использовать себя в *Google Chrome*, если открыть их в другом браузере.
+Иногда они и вовсе недоступны, пока `User Agent` не будет удовлетворять их требованиям.
+Часто это вызвано тем, что приложения тестируют только в определённых браузерах, а поддержку остальных совсем закрывают, чтобы сократить список возможных проблем.
+
+
+Важно заметить, что сейчас вопросы отображения контента чаще всего решаются на стороне клиента, например, адаптивной вёрсткой.
+
+Проверить уникалоность своего отпечатка можно на [panopticlick.eff.org](https://panopticlick.eff.org/).
+
+## ETag & If-None-Match
+
+Эта пару и их взаимодействие разобраны в [статусе 304](#304).
 
