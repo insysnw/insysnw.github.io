@@ -51,6 +51,8 @@ template = "page.html"
 
 * [TLS by Dr. Mike Pound, Computerphile](https://youtu.be/0TLDTodL7Lc)
 
+* [Why Leap Seconds Cause Glitches](https://youtu.be/Uqjg8Kk1HXo)
+
 * ~~[QUIC & HTTP/3 Webinar](https://www.youtube.com/watch?v=7EIUvzw4DM4)~~
 
 # {{ mdi(icon="console-line") }} Запустить
