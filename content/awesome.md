@@ -27,6 +27,8 @@ template = "page.html"
 
 * [Web Performance 101](https://3perf.com/talks/web-perf-101)
 
+* [HTTPWTF](https://httptoolkit.tech/blog/http-wtf/) - описание некоторых странных решений в HTTP
+
 * [Asynchronous Programming Under Linux](https://unixism.net/loti/async_intro.html) - введение в асинхронщину с подводкой к `io_uring`
 
 * [Splitting the ping](https://blog.benjojo.co.uk/post/ping-with-loss-latency-split)
