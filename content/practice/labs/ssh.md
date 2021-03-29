@@ -23,7 +23,7 @@ IP адрес вам выдаст преподаватель.
 
 Для доступа воспользуемся клиентом openssh:
 
-```
+```bash
 ssh root@${IPv4Address} -i ~/.ssh/cnt
 ```
 ## Конфигурационный файл
@@ -32,7 +32,7 @@ ssh root@${IPv4Address} -i ~/.ssh/cnt
 
 Пример для ВМ с адресом `206.189.50.156`:
 
-```
+```fish
 Host cnt-lab1
   User root
   HostName 206.189.50.156
@@ -72,7 +72,7 @@ root@206.189.50.156: Permission denied (publickey).
 
 Пример эксплуатации протокола rcp:
 
-```
+```bash
 scp local-file remote:'`touch abuse-file`remote-file'
 ```
 
@@ -85,19 +85,18 @@ scp local-file remote:'`touch abuse-file`remote-file'
 Проверяем, с какого IP мы обращаемся.
 Настраиваем браузер, curl.
 
-```
+```bash
 ssh -D 8118 -N lab-cnt1
 ```
 
 * `-N` Do not execute a remote command. This is useful for just forwarding ports.
 
 
-```
+```bash
 curl ipinfo.io
 ```
 
-
-```
+```bash
 curl -x socks5h://localhost:8118 ipinfo.io
 ```
 
@@ -108,7 +107,7 @@ curl -x socks5h://localhost:8118 ipinfo.io
 ### Локальное
 **Локальное** (local) - проброс порта удалённой машины на локальную.
 
-```
+```bash
 ssh -L 8080:localhost:80 -N cnt
 ```
 
@@ -137,7 +136,7 @@ respond "Hi, I'm caddy on YOUR_IDENTIFIER local machine
 Для более простого опознавания предлагаю заменить `YOUR_IDENTIFIER` на что-то узнаваемое, например имя или никнэйм.
 
 Теперь запустим caddy:
-```
+```bash
 ./caddy run
 ```
 
@@ -153,7 +152,7 @@ respond "Hi, I'm caddy on YOUR_IDENTIFIER local machine
 Результат - отсутствие ответа.
 
 Теперь откроем туннель командой
-```
+```bash
 ssh -R 1621:localhost:1620 -N cnt
 ```
 
@@ -170,7 +169,7 @@ ssh -R 1621:localhost:1620 -N cnt
 ![internalDroplet](../internalDroplet.png)
 
 Первое и самое простое, попробуем получить к ней доступ напрямую:
-```
+```bash
 ssh $InternalIP
 ```
 
@@ -178,17 +177,17 @@ ssh $InternalIP
 * ручками, запуская клиент на бастионе с логином и паролем - win
 * преподаватель отключает пароль и поясняет, чем это плохо
 
-```
+```bash
 ssh root@$InternalIP -i ~/.ssh/cnt -o ProxyCommand="ssh cnt nc %h %p"
 ```
 
 > **-W** Requests that standard input and output on the client be forwarded to host on port over the secure channel.
 
-```
+```bash
 ssh root@$InternalIP -i ~/.ssh/cnt -o ProxyCommand="ssh cnt -W %h:%p"
 ```
 
-```
+```bash
 ssh root@$InternalIP -i ~/.ssh/cnt -J cnt"
 ```
 
@@ -200,7 +199,7 @@ ssh root@$InternalIP -i ~/.ssh/cnt -J cnt"
 ## Github
 Создадим новую пару ключей:
 
-```
+```bash
 ssh-keygen -t ed25519 -f ~/.ssh/github
 ```
 
@@ -208,7 +207,7 @@ TODO: рекомендация по `passphrase` и его смене.
 
 Теперь добавим только что созданный публичный ключ, `~/.ssh/github.pub`, в [settings/keys](https://github.com/settings/keys).
 
-```
+```fish
 Host github
   User git
   HostName github.com
@@ -216,7 +215,7 @@ Host github
 ```
 
 Проверим наши настройки, выполнив подключение к github:
-```
+```bash
 ssh github
 ```
 
@@ -233,20 +232,20 @@ Connection to github.com closed.
 
 
 ## Gitlab
-```
+```bash
 ssh-keygen -t ed25519 -f ~/.ssh/gitlab
 ```
 
 Теперь добавим только что созданный публичный ключ, `~/.ssh/gitlab.pub`, в [settings/SSH Keys](https://gitlab.com/-/profile/keys).
 
-```
+```fish
 Host gitlab
   User git
   HostName gitlab.com
   IdentityFile ~/.ssh/gitlab
 ```
 
-```
+```bash
 ssh gitlab
 ```
 ```
