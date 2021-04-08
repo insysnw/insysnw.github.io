@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<user>
+  <login>insysnw</login>
+  <id>70750397</id>
+  <node_id>MDEyOk9yZ2FuaXphdGlvbjcwNzUwMzk3</node_id>
+  <avatar_url>https://avatars.githubusercontent.com/u/70750397?v=4</avatar_url>
+  <gravatar_id></gravatar_id>
+  <url>https://api.github.com/users/insysnw</url>
+  <html_url>https://github.com/insysnw</html_url>
+  <followers_url>https://api.github.com/users/insysnw/followers</followers_url>
+  <following_url>https://api.github.com/users/insysnw/following{/other_user}</following_url>
+  <gists_url>https://api.github.com/users/insysnw/gists{/gist_id}</gists_url>
+  <starred_url>https://api.github.com/users/insysnw/starred{/owner}{/repo}</starred_url>
+  <subscriptions_url>https://api.github.com/users/insysnw/subscriptions</subscriptions_url>
+  <organizations_url>https://api.github.com/users/insysnw/orgs</organizations_url>
+  <repos_url>https://api.github.com/users/insysnw/repos</repos_url>
+  <events_url>https://api.github.com/users/insysnw/events{/privacy}</events_url>
+  <received_events_url>https://api.github.com/users/insysnw/received_events</received_events_url>
+  <type>Organization</type>
+  <site_admin>false</site_admin>
+  <name>insys network labs</name>
+  <company>null</company>
+  <blog>insys.spbstu.ru</blog>
+  <location>null</location>
+  <email>null</email>
+  <hireable>null</hireable>
+  <bio>null</bio>
+  <twitter_username>null</twitter_username>
+  <public_repos>5</public_repos>
+  <public_gists>0</public_gists>
+  <followers>0</followers>
+  <following>0</following>
+  <created_at>2020-09-04T09:15:47Z</created_at>
+  <updated_at>2020-09-04T09:58:29Z</updated_at>
+</user>
