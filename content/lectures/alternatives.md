@@ -1,7 +1,7 @@
 +++
 title = "Альтернатива"
 description = "Как ещё можно передать данные по сети"
-weight = 5
+weight = 6
 draft = true
 +++
 

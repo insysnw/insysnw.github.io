@@ -1,7 +1,7 @@
 +++
 title = "REST"
 description = "Ограничение HTTP для улучшения сетевого общения"
-weight = 4
+weight = 5
 draft = true
 +++
 
