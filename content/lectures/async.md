@@ -4,3 +4,7 @@ description = "Перенос ожидания клиентов на урове�
 draft = true
 weight = 3
 +++
+
+# EAGAIN
+
+EWOULDBLOCK
