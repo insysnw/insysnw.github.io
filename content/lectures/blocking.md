@@ -14,7 +14,7 @@ weight = 2
 Первое отличие: сокет не получится найти где угодно на просторах файловой системы.
 Это особый файл, поэтому и создавать его придётся особым методом.
 
-Для этого воспользуемся [библиотечной функцией socket](https://man.archlinux.org/man/socket.3p), что вызывает [одноимённый системный вызов](https://man.archlinux.org/man/socket.2):
+Для этого воспользуемся [библиотечной функцией socket][socket3], что вызывает [одноимённый системный вызов][socket2]:
 
 ```c
 #include <stdio.h>
@@ -37,7 +37,7 @@ int main() {
 Всё, что делает данная программа - создаёт сокет, убеждается в корректности его создания и выводит **Yay** в случае успешного создания.
 С наибольшей вероятностью у вас эта программа, как и у нас, выведет **Yay**, что означает успешне создание сокета.
 
-Рассмотрим подробнее функцию `socket`.
+Рассмотрим подробнее функцию [socket][socket3].
 У неё есть три аргумента:
 
 * domain - семейство абстрагируемых каналов связи (это может быть как [IR], bluetooth, так и IPv4 стэк)
@@ -51,10 +51,14 @@ int main() {
 
 Ещё один важный аспект этой функции - её возвращаемое значение - файловый дескриптор.
 Вот оно, сходство с файлом!
-Дальше можно передавать файловый дескриптор во все функции, что умеют с ним работать.
-В том числе самые обычные [read](https://man.archlinux.org/man/read.3p) и [write](https://man.archlinux.org/man/write.3p).
+Дальше можно передавать файловый дескриптор во все системные вызовы, что умеют с ним работать.
+В том числе самые обычные [read][read2] и [write][write2].
 
 # Работа как с файлом
+
+Первым делом с новым сокетом попробуем [функцию чтение файлов][read3].
+
+На вход она принимает файловый дескриптор, указатель на буфер и размер этого буфера.
 
 ```c
 #include <errno.h> //new
@@ -87,7 +91,18 @@ int main() {
 }
 ```
 
+**TODO:** не можем прочитать, так как сокет не знает, откуда читать
+**TODO**: меняем на UDP
+
+```c
+  int socketfd = socket(AF_INET, SOCK_DGRAM, 0);
+```
+
+Все работает
+
 # Bind
+
+[bind](https://man.archlinux.org/man/bind.3p)
 
 ```c
 #include <arpa/inet.h> //new
@@ -130,7 +145,17 @@ int main() {
 }
 ```
 
+**TODO**: Пишем 4 байта (почему 4, когда символа 3)
+
+Очень важная особенность работы [функции read][read3] скрыта в возвращаемом значении.
+Она возвращает количество прочитанных байт.
+Последний аргумент функции - это именно размер буфера, т.е. верхнее ограничение.
+Функция за раз не вернёт больше информации, но может легко вернуть меньше.
+
+
 # listen
+
+[listen](https://man.archlinux.org/man/listen.3p)
 
 ```c
 #include <arpa/inet.h>
@@ -181,6 +206,8 @@ int main() {
 ```
 
 # accept()
+
+[accept](https://man.archlinux.org/man/accept.3p)
 
 ```c
 #include <arpa/inet.h>
@@ -237,12 +264,18 @@ int main() {
 }
 ```
 
+# Пример с двумя писателями
+
+В один поток/сокет читает многих
+
+Соединения принимаются для многих, но программа на это не реагирует, а ждёт посылки от первого клиента (попавшего в accept).
+[Пример поведения в записи](https://youtu.be/MilImqovonE?t=3762).
 
 # Особые sys call'ы
 
-send/revc
+[recv][recv3]
+[send][send3]
 
-man 2 send/recv
 
 обсудить флаги
 
@@ -251,16 +284,36 @@ man 2 send/recv
 
 совместный запуск
 
-# Доменные имена
-
-# Пример с двумя писателями
-
-В один поток/сокет читает многих
-
 # Создание потока на каждого клиента
 
 Пример сервера
 
 Запуск
 
-# IPv6?
+
+# Допы
+
+## Errno
+
+## Сборка и запуск
+
+## Доменные имена
+
+## IPv6?
+
+[socket2]: https://man.archlinux.org/man/socket.2
+[socket3]: https://man.archlinux.org/man/socket.3p
+[read2]: https://man.archlinux.org/man/read.2
+[read3]: https://man.archlinux.org/man/read.3p
+[write2]: https://man.archlinux.org/man/write.2
+[write3]: https://man.archlinux.org/man/write.3p
+[listen2]: https://man.archlinux.org/man/listen.2
+[listen3]: https://man.archlinux.org/man/listen.3p
+[bind2]: https://man.archlinux.org/man/bind.2
+[bind3]: https://man.archlinux.org/man/bind.3p
+[accept2]: https://man.archlinux.org/man/accept.2
+[accept3]: https://man.archlinux.org/man/accept.3p
+[recv2]: https://man.archlinux.org/man/recv.2
+[recv3]: https://man.archlinux.org/man/recv.3p
+[send2]: https://man.archlinux.org/man/send.2
+[send3]: https://man.archlinux.org/man/send.3p
