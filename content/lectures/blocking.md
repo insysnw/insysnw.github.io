@@ -89,7 +89,7 @@ int main() {
 
 # Bind
 
-```
+```c
 #include <arpa/inet.h> //new
 #include <errno.h>
 #include <stdint.h>
