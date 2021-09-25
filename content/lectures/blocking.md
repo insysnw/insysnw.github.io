@@ -17,9 +17,9 @@ weight = 2
 Для этого воспользуемся [библиотечной функцией socket](https://man.archlinux.org/man/socket.3p), что вызывает [одноимённый системный вызов](https://man.archlinux.org/man/socket.2):
 
 ```c
-#include <sys/socket.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/socket.h>
 
 int main() {
   int socketfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -57,12 +57,12 @@ int main() {
 # Работа как с файлом
 
 ```c
+#include <errno.h> //new
+#include <stdint.h> // new
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/socket.h>
-#include <stdint.h> // new
 #include <unistd.h> // new
-#include <errno.h>
 
 int main() {
   int socketfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -90,12 +90,12 @@ int main() {
 # Bind
 
 ```
-#include <arpa/inet.h>
+#include <arpa/inet.h> //new
 #include <errno.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/socket.h>
-#include <stdint.h>
 #include <unistd.h>
 
 int main() {
@@ -135,10 +135,10 @@ int main() {
 ```c
 #include <arpa/inet.h>
 #include <errno.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/socket.h>
-#include <stdint.h>
 #include <unistd.h>
 
 int main() {
@@ -185,10 +185,10 @@ int main() {
 ```c
 #include <arpa/inet.h>
 #include <errno.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/socket.h>
-#include <stdint.h>
 #include <unistd.h>
 
 int main() {
