@@ -12,3 +12,8 @@
 
 /*! MaterialDesign Icons v5.4.55 | MIT License | materialdesignicons.com */
 @import "./MaterialDesign/5.4.55/materialdesignicons.scss";
+
+.youtuber {
+  @extend .box;
+  float: right;
+}
