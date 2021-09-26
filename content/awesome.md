@@ -25,6 +25,8 @@ template = "page.html"
 
 * [IPv4 Address Blocks Reserved for Documentation](https://tools.ietf.org/html/rfc5737)
 
+* [URLs: It's complicated...](https://www.netmeister.org/blog/urls.html)
+
 * [Web Performance 101](https://3perf.com/talks/web-perf-101)
 
 * [HTTPWTF](https://httptoolkit.tech/blog/http-wtf/) - описание некоторых странных решений в HTTP
