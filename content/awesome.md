@@ -67,6 +67,8 @@ template = "page.html"
 
 * [mtr](https://www.bitwizard.nl/mtr/) - traceroute с информативной визуализацией
 
+* [toxyproxy](https://toxiproxy.io) - framework для симуляции неблагоприятных условий сети (хорош для тестирования)
+
 ## Web
 
 * [PANOPTICLICK](https://panopticlick.eff.org/) - проверка уникальности отпечатка вашего браузера
