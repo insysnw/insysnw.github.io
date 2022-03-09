@@ -90,6 +90,7 @@ order = ["2"]
 * [https://www.pool.ntp.org/](https://www.pool.ntp.org/) - пул публичных серверов
 * Клиенты встроены в большинство настольных ОС
 * [chrony](https://chrony.tuxfamily.org/) - открытые сервер и клиент
+* [Список](https://gist.github.com/mutin-sa/eea1c396b1e610a2da1e5550d94b0453#file-public_time_servers-md) лучших общедоступных серверов времени
 
 ## SNMP
 
